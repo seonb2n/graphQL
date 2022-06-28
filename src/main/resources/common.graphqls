@@ -1,0 +1,29 @@
+schema {
+    query: Query,
+    mutation: Mutation,
+}
+
+type Query {
+    memberBySn(memberSn: Int!): Member,
+    memberById(memberId: String!): Member,
+    allMembers(count: Int, offset: Int): [Member],
+}
+
+type Mutation {
+    createMember(saveMemberInfo: SaveMember!): Member!,
+    deleteMemberBySn(memberSn: Int!): Boolean!,
+}
+
+interface PersonInfo {
+    memberName1: String!,
+    memberName2: String!,
+    memberName3: String,
+    memberName4: String,
+    memberEmail: String!,
+    zipCode: String!,
+    address1: String!,
+    address2: String!,
+    address3: String!,
+    address4: String,
+    phoneNo: String!,
+}
